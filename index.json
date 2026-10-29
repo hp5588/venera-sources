@@ -1,0 +1,23 @@
+[
+  {
+    "name": "包子 · 个人测试源",
+    "key": "personal_baozi",
+    "version": "0.1.0-alpha.1",
+    "fileName": "sources/baozi.js",
+    "description": "预览版：搜索、目录及同章分页图片；使用前阅读仓库NOTICE.md。"
+  },
+  {
+    "name": "拷贝 · 个人测试源",
+    "key": "personal_copy",
+    "version": "0.1.0-alpha.1",
+    "fileName": "sources/copy.js",
+    "description": "预览版：匿名协议、搜索和目录分页；随机客户端标识会发送给源站，详见NOTICE.md。"
+  },
+  {
+    "name": "漫蛙 · 个人测试源",
+    "key": "personal_manwame_normal",
+    "version": "0.1.0-alpha.2",
+    "fileName": "sources/manwame.js",
+    "description": "预览版：站点搜索、列表分页及章节阅读；部分封面线路留空，详见NOTICE.md。"
+  }
+]
