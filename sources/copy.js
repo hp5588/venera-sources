@@ -2,7 +2,7 @@
 class PersonalCopy extends ComicSource {
   name = "拷贝 · 个人测试源";
   key = "personal_copy";
-  version = "0.1.0-alpha.1";
+  version = "0.1.0-alpha.2";
   minAppVersion = "1.18.1";
   url = "";
 
@@ -65,7 +65,10 @@ class PersonalCopy extends ComicSource {
       let reason = "";
       try { const body = JSON.parse(response.body); reason = String(body.message || body.results?.detail || "").slice(0, 180); }
       catch { /* Keep the HTTP diagnosis if the response is not JSON. */ }
-      throw new Error("拷贝暂时限制访问（HTTP " + response.status + "），请稍后再试；不会自动重试或更换身份。" + reason);
+      const diagnosis = response.status === 210
+        ? "拷贝拒绝请求（HTTP 210），可能涉及客户端版本、协议校验或访问限制。若提示更新APP，指拷贝客户端，并非VeneraNext；持续出现时需要检查源的兼容性。"
+        : "拷贝请求过于频繁（HTTP 429），请暂停操作，稍后再试。";
+      throw new Error(diagnosis + "本源不会自动重试或更换身份。" + (reason ? "服务器提示：" + reason : ""));
     }
     if (response.status !== 200) throw new Error("拷贝请求失败：HTTP " + response.status);
     let data;
