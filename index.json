@@ -9,7 +9,7 @@
   {
     "name": "拷贝 · 个人测试源",
     "key": "personal_copy",
-    "version": "0.1.0-alpha.1",
+    "version": "0.1.0-alpha.2",
     "fileName": "sources/copy.js",
     "description": "预览版：匿名协议、搜索和目录分页；随机客户端标识会发送给源站，详见NOTICE.md。"
   },
