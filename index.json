@@ -2,9 +2,9 @@
   {
     "name": "包子 · 个人测试源",
     "key": "personal_baozi",
-    "version": "0.1.0-alpha.1",
+    "version": "0.1.0-alpha.2",
     "fileName": "sources/baozi.js",
-    "description": "预览版：搜索、目录及同章分页图片；使用前阅读仓库NOTICE.md。"
+    "description": "预览版：修复作品书名与封面解析；支持搜索、目录及同章分页图片，使用前阅读仓库NOTICE.md。"
   },
   {
     "name": "拷贝 · 个人测试源",

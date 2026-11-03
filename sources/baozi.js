@@ -2,9 +2,9 @@
 class PersonalBaozi extends ComicSource {
   name = "包子 · 个人测试源";
   key = "personal_baozi";
-  version = "0.1.0-alpha.1";
+  version = "0.1.0-alpha.2";
   minAppVersion = "1.18.1";
-  url = ""; // Private repository: update by importing a downloaded file.
+  url = ""; // Update through the associated source catalog.
 
   origin = "https://cn.webmota.com";
   headers = { "User-Agent": "Mozilla/5.0", "Referer": "https://cn.webmota.com/" };
@@ -105,8 +105,9 @@ class PersonalBaozi extends ComicSource {
       if (!/^[\w-]+$/.test(id)) throw new Error("作品标识无效");
       const doc = await this.document(this.origin + "/comic/" + id);
       try {
-        const title = doc.querySelector("h1");
-        const cover = doc.querySelector('meta[property="og:image"]');
+        // The first h1 is the site logo, not the comic title.
+        const title = doc.querySelector("h1.comics-detail__title");
+        const cover = doc.querySelector('meta[name="og:image"], meta[property="og:image"]');
         const chapters = {};
         const nodes = doc.querySelectorAll("#chapter-items a, #chapters_other_list a");
         for (const node of nodes) {
@@ -120,7 +121,7 @@ class PersonalBaozi extends ComicSource {
           const url = this.chapterAddress(raw);
           chapters[url] = label;
         }
-        if (!title || !Object.keys(chapters).length) {
+        if (!title || !title.text.trim() || !Object.keys(chapters).length) {
           throw new Error("作品目录未能完整解析；请反馈页面结构，不生成猜测的章节编号");
         }
         return new ComicDetails({ title: title.text.trim(), tags: {},
