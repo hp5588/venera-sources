@@ -29,11 +29,16 @@ https://raw.githubusercontent.com/hp5588/venera-sources/main/index.json
 
 | 源 | 固定 key | 当前版本 |
 | --- | --- | --- |
-| 包子 · 个人测试源 | `personal_baozi` | `0.1.0-alpha.2` |
+| 包子 · 个人测试源 | `personal_baozi` | `0.1.0-alpha.3` |
 | 拷贝 · 个人测试源 | `personal_copy` | `0.1.0-alpha.2` |
 | 漫蛙 · 个人测试源 | `personal_manwame_normal` | `0.1.0-alpha.2` |
 
 ## 更新记录
+
+### 2026-11-07 包子 `0.1.0-alpha.3`
+
+- 兼容更多作品目录布局，修复部分作品打开详情时报“作品目录未能完整解析”的问题。章节继续使用源站提供的链接和编号。
+- 在漫画源管理中通过关联仓库更新包子源，再重新打开受影响的作品详情。
 
 ### 2026-11-03：包子 `0.1.0-alpha.2`
 

@@ -2,7 +2,7 @@
 class PersonalBaozi extends ComicSource {
   name = "包子 · 个人测试源";
   key = "personal_baozi";
-  version = "0.1.0-alpha.2";
+  version = "0.1.0-alpha.3";
   minAppVersion = "1.18.1";
   url = ""; // Update through the associated source catalog.
 
@@ -109,7 +109,7 @@ class PersonalBaozi extends ComicSource {
         const title = doc.querySelector("h1.comics-detail__title");
         const cover = doc.querySelector('meta[name="og:image"], meta[property="og:image"]');
         const chapters = {};
-        const nodes = doc.querySelectorAll("#chapter-items a, #chapters_other_list a");
+        const nodes = doc.querySelectorAll("#chapter-items a, #chapters_other_list a, .comics-chapters a");
         for (const node of nodes) {
           const href = node.attributes.href || "";
           const handler = node.attributes.onclick || node.attributes.on || "";
